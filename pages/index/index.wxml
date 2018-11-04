@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<!--轮播区-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='imgSlide'>
+   
+     <navigator url="/pages/classVideo/classVideo?classId=1">
+      <swiper-item>
+        <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper1.png" class="slide-image" style='width:{{screenWidth}}px;'/>
+      </swiper-item>
+      </navigator>
+           <navigator url="/pages/about/about?classId=2">
+      <swiper-item>
+        <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper2%281%29.png" class="slide-image" style='width:{{screenWidth}}px;'/>
+      </swiper-item>
+      </navigator>
+           <navigator url="/pages/action/action" open-type="switchTab">
+      <swiper-item>
+        <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper3.png" class="slide-image" style='width:{{screenWidth}}px;'/>
+      </swiper-item>
+      </navigator>
+    
+</swiper>
+
+
+<!--热门推荐-->
+<view class='clear'></view>
+<view class="appointment">
+ <view class="app-title" style='border-left:10rpx solid #FF3333;'>热门推荐</view>
+ </view>
+ <view class='clear-rd'></view>
+ <view class="app-moduler">
+    <block wx:for="{{recommond}}">
+    <navigator url="/pages/classVideo/classVideo?classId={{item.id}}" class="mod-item-rd">
+      <view class='mod-img-title-rd'>
+      <view class="mod-img-rd">
+        <image src="{{item.picture}}" class="mod-image-rd"></image>
+      </view>
+      <view class="mod-title-type-rd">
+      <view class="mod-title-rd">
+         <text class='class-title-rd'>{{item.name}}</text>  
+      </view>
+      <view class="mdemss">
+      <text class='text-Ind'>类别: {{item.classifyName}}</text>
+      <text class='text-Ind'>{{item.studyCount}}人学过</text>
+      </view>
+     
+      </view>
+      </view>
+      <view class='clear-rd'></view>
+    </navigator>
+    
+    </block>
+    </view>
+    
+<!--课程广告-->
+<view class='clear'></view>
+<view class="appointment">
+ <view class="app-title" style='border-left:10rpx solid #9B30FF;'>深度学习</view>
+ </view>
+ <view class='clear-rd'></view>
+ <view class="app-moduler">
+    <navigator url="/pages/about/about?classId=2" class="adv-mod-item-rd">
+      <view class='adv-mod-img-title-rd'>
+      <view class="adv-mod-img-rd">
+        <image src="{{advpicture}}" class="adv-mod-image"></image>
+      </view>
+      <view class="adv-mod-title-type-rd">
+      <view class="adv-mod-title-rd">
+         <text class='adv-class-title-rd'>有三说深度学习</text>  
+      </view>
+      <view class="adv-mdemss">
+      <text class='adv-text-Ind'>讲师 : 龙鹏 等</text>
+      </view>
+      <view class='adv-meas'>
+      <text class='adv-text-include'>{{DeepLearninginclude}}</text>
+      </view>
+      </view>
+      </view>
+      <button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="warn" class='adv-button'>加入学习</button>
+      <view class='clear-rd'></view>
+    </navigator>
+    </view>
+
+
+

@@ -1,0 +1,199 @@
+
+page{
+    height: 100%;
+}
+.mdetail{
+    overflow: hidden;
+    padding:5px 10px;
+    border-bottom:2px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+}
+
+.mdemss{
+    display: flex;
+    flex-direction:row; 
+    justify-content:start;
+    color: #a19c9c;
+    font-size: 10px;
+   
+}
+.textInd{
+  margin-right:10px;
+}
+.mdetail image{
+    float:left;
+    width:55px;
+    height:55px;
+}
+.minfo{
+    float:left;
+    margin-left:10px;
+    padding:10px 0;
+    
+}
+.con-trimg{
+  width:240rpx;
+  height:240rpx;
+  border-radius: 5%;
+}
+.con-info{
+  margin:15rpx 20rpx;
+  overflow: hidden; 
+  font-size: 32rpx;
+  font-family: "微软雅黑";
+  color:#606060;
+}
+.coin-info{
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.coin-name{
+  margin-bottom:10px; 
+}
+.con-teacher{
+  display: flex;
+  flex-direction:row;
+  width:90%;
+  height:320rpx;
+  border: 2rpx solid #eeeeee;
+  padding:10rpx 10rpx;
+  margin:5rpx auto;
+}
+.clear1{
+  display: flex;
+  flex-direction: column;
+  height:5rpx;
+  background: #eeeeee;
+  margin: 3px;
+  
+}
+.clear{
+  display: flex;
+  flex-direction: column;
+  height:2rpx;
+  background: #eeeeee;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 21px;
+  margin-right: 8px;
+  
+}
+.mod-signup{
+  margin-bottom:10px; 
+}
+
+.mod-item1{
+ width:46%;
+ height:300rpx;
+ float: left;
+ margin-left:20rpx;
+ margin-top:40rpx;
+ position: relative;
+}
+.mod-signup1{
+  position: absolute;
+  
+}
+.mod-signup1 image{
+  width:30rpx;
+  height:30rpx;
+  
+}
+.mod-img1{
+  width:100%;
+  height:180rpx;
+} 
+.mod-image1{
+  width: 100%;
+  height:180rpx;
+  border-radius: 5%;
+}
+.mod-title1{
+  font-size:32rpx;
+  font-family: '微软雅黑';
+  display:flex;
+  height:80rpx;
+  margin-top:15rpx;
+  flex-direction:row;
+  justify-content: space-between;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mod-signup image{
+  width:12px;
+  height:12px;
+  margin-right: 10px;
+}
+.include{
+  
+  font-size: 15px;
+  margin: 14px;
+  display: flex;
+  flex-direction:column;
+ 
+ 
+}
+.mdetail1{
+ border-bottom:5px solid #e0e0e09c;
+}
+.includeTitle{
+  font-weight: bold;
+}
+.detailLeft{
+    float:left;
+}
+.detailRight{
+    float:right;
+}
+.mname{
+    font-size: 20px;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+.mauthor{
+    font-size: 12px;
+    color:#dbdbdb;
+}
+
+.lyc{
+    color:white;
+    position: absolute;
+    left: 0;
+    bottom:10px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    width: 80%;
+    text-align: center;
+    z-index: 10;
+}
+.includeTextAds{
+  margin-top:10px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.includeText{
+  font-size: 13px;
+  color: #423d3dd5;
+  font-weight: 100;
+
+}
+.includeTextATsz{
+  margin-left:10px; 
+  margin-bottom: 20px;
+  height: none;
+}
+.ClassTitleText{
+  color: #423d3d;
+  font-weight: bold;
+  margin-bottom:10px; 
+}
+.picwidth{
+  width: 100%;
+  height: 2360rpx;
+}
+
+

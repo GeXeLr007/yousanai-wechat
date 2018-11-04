@@ -1,0 +1,98 @@
+
+    <!--上部分介绍模板-->
+     <block wx:for="{{classMsg}}">
+    <view class="mdetail" data-cid="{{index}}" bindtap="musictap" data-hi="WeChat">
+        <view class="minfo">
+          <view class="mname">{{item.name}}</view>     
+      </view>
+      <view class="mdemss">
+      <view class='textInd'>类别: {{item.subClassifyName}}</view>
+      <view>
+        <text class='textInd'>·</text>
+      </view>
+      <view class='textInd'>总时长: {{item.time}}</view>
+            <view>
+        <text class='textInd'>·</text>
+      </view>
+      <view class='textInd'>{{item.studyCount}}人已加入学习</view>
+           
+      </view>
+    </view>
+  
+  
+  
+  <!--中间简介-->
+<view class="mdetail1" >
+<view class="include">
+<text class="includeTitle">简介</text>
+<view class='includeTextAds'>
+<text class='includeText'>{{item.brief}}</text>
+</view>
+</view>
+</view>
+</block>
+<view>
+  <image src='{{haibao}}' class='picwidth'></image>
+</view>
+
+
+<!--章节-->
+<view class="mdetailAA" >
+<view class="include">
+<text class="includeTitle">章节</text>
+<view class="includeTextATsz"  wx:for="{{learnClass}}">
+<view class='includeTextAds'>
+<text class='ClassTitleText'>{{item.name}}</text>
+</view>
+<view class='includeTextAz'  wx:for="{{item.sections}}">
+<view class="mod-signup" >
+ <navigator url="/pages/classVideo/classVideo?classId={{item.courseId}}" open-type="navigate" hover-class="other-navigator-hover" class="plate-item">
+   <image src="{{signupimg}}"></image>
+   
+<text class='includeText'>{{item.name}}</text>
+</navigator>
+<view class="clear"></view>
+</view>
+</view>
+</view>
+</view>
+</view>
+<view class='clear1'></view>
+  <view class="app-moduler">
+    <block wx:for="{{learnTcher}}">
+  <view class="content">
+    <navigator url="/pages/teacher/teacher" hover-class="navigator-hover" class="con-teacher">
+    <view class="con-tr">
+      <image src="{{teacherHeader}}" class="con-trimg"></image>
+    </view>
+    <view class="con-info">
+      <view class="coin-name">课程讲师: {{item.realname}}</view>
+      <view class="coin-info">工作地点: {{item.collegeName}}</view>
+      <view class="coin-info">职位: {{item.title}}</view>
+    </view>
+  </navigator>
+  </view>
+</block>
+</view>
+
+<view class="clear1"></view>
+<!--热门推荐-->
+<view class="appointment">
+ <view class="app-title" style='border-left:10rpx solid #FF3333;'>推荐学习</view>
+ </view>
+ <view class="app-moduler">
+    <block wx:for="{{learnClassRd}}">
+    <navigator url="/pages/classInfo/classInfo?classId={{item.id}}" class="mod-item1">
+     <view class="mod-signup1">
+        <image src="{{signupimg}}"></image>
+      </view>
+      <view class="mod-img1">
+        <image src="{{item.picture}}" class="mod-image1"></image>
+      </view>
+
+      <view class="mod-title1">
+         <text>{{item.name}}</text>  
+      </view>
+    </navigator>
+    </block>
+    </view>

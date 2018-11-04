@@ -1,0 +1,34 @@
+<view class="container more">
+  <!--上部信息-->
+  <view class="user flex-wrp">
+    <view class="avatar flex-item">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="user-info flex-item">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="edit" catchtap="mimeinfo">绑定有三账号</text>
+    </view>
+  </view>
+
+  <!--下部信息-->
+  <view class="my">
+    <view class="my-item flex-wrp" catchtap="no_payment">
+      <view class="myitem-icon flex-item">
+        <image src="../../image/video.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>我的课程</text>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" catchtap="no_comment">
+      <view class="myitem-icon flex-item">
+        <image src="../../image/icon_no_comment.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>消息通知</text>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="content" wx:for="{{trimg}}">
+  <view class="top">
+    <view class="top-tr">
+     <image src="{{item.header}}" class="top-trimg"></image>
+    </view>
+    <view class="top-info">
+      <view class="toin-name">姓名: {{item.realname}}</view>
+      <view class="toin-info">城市: {{item.city}}</view>
+      <view class="toin-info">学历: {{item.education}}</view>
+      <view class="toin-info">职位: {{item.title}}</view>
+    </view>
+  </view>
+  <view class="clear"></view>
+  <view class="info">
+    <view class="in-title">个人简介</view>
+    <view class="in-info">  {{item.jjsign}}</view>
+  </view>
+  <view class="clear"></view>
+
+</view>

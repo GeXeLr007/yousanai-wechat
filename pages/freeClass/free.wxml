@@ -1,0 +1,17 @@
+
+<view class="appointment">
+ <view class="app-title">免费好课</view>
+  <view class="app-moduler">
+  <block wx:for="{{freeUrls}}">
+    <navigator url="/pages/classVideo/classVideo?classId={{item.id}}" class="mod-item">
+
+      <view class="mod-img">
+        <image src="{{item.picture}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title">
+         <text>{{item.name}}</text>  
+      </view>
+    </navigator>
+    </block>
+   </view>
+</view>

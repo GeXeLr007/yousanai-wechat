@@ -1,0 +1,76 @@
+  <view class="navbar1">
+<view class="section tc">
+  <video src="{{src}}" direction="90" controls  autoplay='true' class="videoProl">
+  </video>
+</view>
+<!--页面分块加载-->
+   <view class="navbar"> 
+ <text  wx:for="{{navbar}}"
+        data-idx="{{index}}"
+        class="item {{currentTab==index ? 'active' : ''}}"
+        wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<view class="clearzhang"></view>
+</view>
+
+<!--章节-->
+<view hidden="{{currentTab!==0}}">
+<view class="mdetail1" >
+<view class="include">
+<view class='type-container'>
+</view>
+<view class="includeTextATsz"  wx:for="{{learnClass}}">
+<view class='includeTextAds'>
+<text class='ClassTitleText'>{{item.name}}</text>
+<view class='clear1'></view>
+</view>
+<view class='includeTextAz'  wx:for="{{item.sections}}">
+<view class="mod-signup"> 
+<view class='clear-rd'></view>
+<image src="{{signupimg}}"></image>
+<text class='includeText'bindtap='chooseVideo' data-name='{{item.videoUrl}}'>{{item.name}}</text>
+<view class="clear"></view>
+</view>
+</view>
+</view>
+</view>
+</view>
+</view>
+
+<!--中间简介-->
+<view hidden="{{currentTab!==1}}">
+    <!--上部分介绍模板-->
+     <block wx:for="{{classMsg}}">
+  <!--中间简介-->
+<view class="mdetail2" >
+<view class="include">
+<text class="includeTitle">简介</text>
+<view class='includeTextAds'>
+<text class='includeText'>{{item.brief}}</text>
+</view>
+</view>
+</view>
+</block>
+<view>
+  <image src='{{haibao}}' class='picwidth'></image>
+</view>
+<view class='clear1'></view>
+  <view class="app-moduler">
+    <block wx:for="{{learnTcher}}">
+  <view class="content">
+    <navigator url="/pages/teacher/teacher?teacherId={{item.id}}" hover-class="navigator-hover" class="con-teacher">
+    <view class="con-tr">
+      <image src="{{teacherHeader}}" class="con-trimg"></image>
+    </view>
+    <view class="con-info">
+      <view class="coin-name">课程讲师: {{item.realname}}</view>
+      <view class="coin-info">工作地点: {{item.collegeName}}</view>
+      <view class="coin-info">职位: {{item.title}}</view>
+  
+    </view>
+  </navigator>
+  </view>
+</block>
+</view>
+</view>
+

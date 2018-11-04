@@ -1,0 +1,20 @@
+<view class="appointment" wx:for="{{OneClassUrls}}">
+ <view class="app-title">{{item.name}}</view>
+ 
+  <view class="app-moduler"data-id="{{}}">
+    <navigator url="url" class="mod-item">
+      <view class="mod-img">
+        <image src="{{item.picture}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title"  wx:for="{{freeUrls}}"  wx:key="classify" wx:for-item="items">
+         <text wx:if="{{freeUrls.classify=='fe'}}">{{items.name}}</text>  
+      </view>
+      <view class="mod-info">
+        <view class="mod-icon">
+          <image src="{{iconsrc}}" class="icon"></image>
+        </view>
+        <view class="moinfont">{{item.studyCount}}人已申请</view>
+      </view>
+    </navigator>
+   </view>
+   </view>

@@ -1,0 +1,57 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/freeClass/free",
+    "pages/signup/signup",
+    "pages/action/action",
+    "pages/about/about",
+    "pages/teacher/teacher",
+    "pages/teacherlist/teacherlist",
+    "pages/actionlist/actionlist",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/userRegist/regist",
+    "pages/userLogin/login",
+    "pages/actualClass/actual",
+    "pages/classVideo/classVideo",
+    "pages/classInfo/classInfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF3333",
+    "navigationBarTitleText": "有三AI学院",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#4ec5c9",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/homeactive.png"
+      },
+      {
+        "pagePath": "pages/action/action",
+        "text": "项目实战",
+        "iconPath": "image/shizhan.png",
+        "selectedIconPath": "image/shizhan1.png"
+      },
+      {
+       "pagePath": "pages/mine/mine",
+        "text": "我的",
+       "iconPath": "image/mime_nomal.png",
+       "selectedIconPath": "image/mime_pressed.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
