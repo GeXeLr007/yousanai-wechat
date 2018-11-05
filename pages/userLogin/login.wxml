@@ -8,7 +8,7 @@
             <view class="inputView">
                 <image class="nameImage" src="../../image/username.png"></image>
                 <label class="loginLabel">账号</label>
-                <input name="realname" class="inputText" placeholder="请输入账号" value='dulp'/>
+                <input name="username" class="inputText" placeholder="请输入账号" value='gxl123'/>
             </view>
             
             <view class="line"></view>
@@ -17,7 +17,7 @@
             <view class="inputView">
                 <image class="keyImage" src="../../image/password.png"></image>
                 <label class="loginLabel">密码</label>
-                <input name="password" class="inputText" password="true" placeholder="请输入密码" value='19971104yhb'/>
+                <input name="password" class="inputText" password="true" placeholder="请输入密码" value='123456'/>
             </view>
 
             <!--按钮-->

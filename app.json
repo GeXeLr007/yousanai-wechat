@@ -1,6 +1,6 @@
 {
   "pages":[
-    
+    "pages/mine/mine",
     "pages/index/index",
     "pages/freeClass/free",
     "pages/signup/signup",
@@ -10,7 +10,7 @@
     "pages/teacherlist/teacherlist",
     "pages/actionlist/actionlist",
     "pages/logs/logs",
-    "pages/mine/mine",
+    
     "pages/userRegist/regist",
     "pages/userLogin/login",
     "pages/actualClass/actual",

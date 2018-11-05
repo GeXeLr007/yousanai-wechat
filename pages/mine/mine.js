@@ -2,10 +2,11 @@
 var util = require('../../utils/util.js')
 var uri = 'memberapi/memberDetail'
 var app = getApp()
+var serverUrl = app.serverUrl;
 var Info = {}
 Page({
   data: {
-    userInfo: {}
+    userInfo: null
   },
   //事件处理函数
   bindViewTap: function () {
@@ -76,25 +77,38 @@ Page({
     })
   },
   onShow: function () {
-    var that = this
-    //判断是否登陆，如果没登陆走微信的
-    var CuserInfo = wx.getStorageSync('CuserInfo');
-    Info = CuserInfo
-    if (CuserInfo.token) {
-      //获取照片和用户名
-      var photo = 'http://testbbcimage.leimingtech.com' + CuserInfo.avatar_url;
-      var name = CuserInfo.loginname;
-      var user = {}
-      user.avatarUrl = photo;
-      user.nickName = name;
-      that.setData({ userInfo: user })
-    } else {
-      //调用应用实例的方法获取全局数据
-      app.getUserInfo(function (userInfo) {
-        //更新数据
-        that.setData({
-          userInfo: userInfo
-        })
+    var that = this;
+    if (!that.data.userInfo) {
+      wx.getUserInfo({
+        success: function (res) {
+          app.globalData.userInfo = res.userInfo;
+          that.setData({
+            userInfo: res.userInfo
+          })
+        }
+      });
+    }
+    
+    if(!app.globalData.openId){
+      wx.login({
+        success(res) {
+          if (res.code) {
+            //发起网络请求
+            wx.request({
+              url: serverUrl + '/user/openId',
+              data: {
+                code: res.code
+              },
+              success: function (res) {
+                var openId = res.data.data;
+                app.globalData.openId = openId;
+                console.log(openId);
+              }
+            })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
       })
     }
   }
