@@ -108,10 +108,6 @@ Page({
     wx.setStorageSync("currentTime", 0)
     var that = this;
     var section = res.currentTarget.dataset.section
-    that.setData({
-      src: section.videoUrl,
-      section: section
-    })
     wx.request({
       url: serverUrl + '/course/insertOrUpdateUserCourseSection',
       header: {
@@ -124,6 +120,11 @@ Page({
       },
       success: function(res) {
         console.log(res.data)
+        that.setData({
+          rate:res.data.data,
+          src: section.videoUrl,
+          section: section
+        })
       }
     })
   },

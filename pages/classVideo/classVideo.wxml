@@ -1,6 +1,6 @@
 <view class="navbar1">
   <view class="section tc">
-    <video src="{{src}}" autoplay="{{false}}" class="videoProl" bindtimeupdate='ontimeupdate' bindended='onended'>
+    <video src="{{src}}" autoplay="{{false}}" initial-time='{{rate}}' class="videoProl" bindtimeupdate='ontimeupdate' bindended='onended'>
     </video>
   </view>
   <!--页面分块加载-->
