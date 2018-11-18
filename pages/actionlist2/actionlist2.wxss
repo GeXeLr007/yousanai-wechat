@@ -1,0 +1,19 @@
+.actionpic{
+ width:100%;
+ height: 1900rpx;
+}
+.actionpic1{
+ width:100%;
+ height: 8600rpx;
+ margin-top: -5px;
+}
+.actionpic2{
+ width:100%;
+ height: 650rpx;
+}
+.clear{
+  display: flex;
+  flex-direction: column;
+  height:10rpx;
+  background: #eeeeee;
+}

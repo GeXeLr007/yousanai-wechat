@@ -1,0 +1,4 @@
+<view class="content">
+<image src="{{actionpic}}" class="actionpic"></image>
+<view class="clear"></view>
+</view>

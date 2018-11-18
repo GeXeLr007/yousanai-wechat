@@ -17,7 +17,7 @@
             <view class="inputView">
                 <image class="keyImage" src="../../image/password.png"></image>
                 <label class="loginLabel">密码</label>
-                <input name="password" value='1234' class="inputText" password="true" placeholder="请输入密码"/>
+                <input name="password" value='123456' class="inputText" password="true" placeholder="请输入密码"/>
             </view>
 
             <!--按钮-->

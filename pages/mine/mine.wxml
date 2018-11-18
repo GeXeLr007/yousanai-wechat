@@ -2,12 +2,14 @@
   <!--上部信息-->
   <view class="user flex-wrp">
     <view class="avatar flex-item">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
     </view>
     <view class="user-info flex-item">
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="edit" catchtap="mimeinfo">绑定有三账号</text>
-    </view>
+    <open-data type="userNickName" class="userinfo-nickname"></open-data>
+      <text class="edit" catchtap="mimeinfo">绑定有三账号</text>  
+      <!--<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>-->
+<!--<view wx:else>请升级微信版本</view>-->
+  </view>
   </view>
 
   <!--下部信息-->

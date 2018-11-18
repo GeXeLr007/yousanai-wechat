@@ -30,15 +30,17 @@ Page({
           wx.hideLoading();
           const status = res.data.status;
           if (status == 200) {
+            app.globalData.userInfoBack = res.data.data;
             wx.showToast({
               title: '登陆成功',
               icon: 'success',
-              duration: 2000
+              duration: 2000,
+              success:function(){
+                wx.switchTab({
+                  url: '/pages/mine/mine',
+                });
+              }
             });
-            app.userInfoBack = res.data.data;
-            wx.navigateBack({
-              
-            })
           } else {
             wx.showToast({
               title: res.data.msg,

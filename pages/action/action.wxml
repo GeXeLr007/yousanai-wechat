@@ -1,13 +1,13 @@
 <view class="content">
-<navigator url="none" hover-class="navigator-hover" class="con-item">
+<navigator url="/pages/actionlist1/actionlist1" hover-class="navigator-hover" class="con-item">
 <image src="{{actionpic}}" class="actionpic"></image>
 <view class="clear"></view>
 </navigator>
-<navigator url="url" class="con-item">
+<navigator url="/pages/actionlist2/actionlist2" class="con-item">
 <image src="{{actionapic}}" class="actionpic"></image>
 <view class="clear"></view>
 </navigator>
-<navigator url="url" class="con-item">
+<navigator url="/pages/actionlist3/actionlist3" class="con-item">
 <image src="{{actionbpic}}" class="actionpic"></image>
 <view class="clear"></view>
 </navigator>

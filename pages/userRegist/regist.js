@@ -35,11 +35,11 @@ Page({
             wx.showToast({
                 title: '小老弟恭喜你注册成功了~',
                 icon: 'none',
-                duration: 3000
-              }),
-            wx.navigateBack({
-              
-            })
+                duration: 3000,
+                success:function(){
+                  wx.navigateBack({})
+                }
+              });
           } else {
             wx.showToast({
               title: res.data.msg,
@@ -52,8 +52,8 @@ Page({
     }
   },
   goLoginPage: function() {
-    wx.navigateTo({
-      url: '../userLogin/login',
+    wx.navigateBack({
+      
     })
   }
 })

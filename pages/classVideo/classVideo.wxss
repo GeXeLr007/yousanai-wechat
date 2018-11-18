@@ -129,6 +129,20 @@ page{
   margin-right: 8px;
   
 }
+.clear_line{
+  display: flex;
+  flex-direction: column;
+}
+.clear_line_title{
+    display: flex;
+  flex-direction: column;
+  height:2rpx;
+  background: #eeeeee;
+  margin-top: -2px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 8px;
+}
 .mod-signup{
   margin-bottom:10px; 
   display: flex;

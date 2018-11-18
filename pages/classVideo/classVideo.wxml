@@ -20,16 +20,20 @@
 <view class='type-container'>
 </view>
 <view class="includeTextATsz"  wx:for="{{learnClass}}">
+
 <view class='includeTextAds'>
 <text class='ClassTitleText'>{{item.name}}</text>
-<view class='clear1'></view>
 </view>
+
+
 <view class='includeTextAz'  wx:for="{{item.sections}}">
+<view class='clear_line'>
 <view class="mod-signup"> 
-<view class='clear-rd'></view>
 <image src="{{signupimg}}"></image>
 <text class='includeText'bindtap='chooseVideo' data-name='{{item.videoUrl}}'>{{item.name}}</text>
-<view class="clear"></view>
+</view>
+<view class="clear_line_title">
+</view>
 </view>
 </view>
 </view>
@@ -64,7 +68,7 @@
     </view>
     <view class="con-info">
       <view class="coin-name">课程讲师: {{item.realname}}</view>
-      <view class="coin-info">工作地点: {{item.collegeName}}</view>
+      <view class="coin-info">工作地点: {{item.district}}</view>
       <view class="coin-info">职位: {{item.title}}</view>
   
     </view>

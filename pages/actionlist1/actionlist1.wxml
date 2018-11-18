@@ -1,0 +1,5 @@
+<view class="content">
+<navigator url="/pages/action/action" hover-class="navigator-hover" class="con-item">
+<image src="{{actionpic}}" class="actionpic"></image>
+</navigator>
+</view>
