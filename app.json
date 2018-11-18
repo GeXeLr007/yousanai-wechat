@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/mine/mine",
+    
     "pages/index/index",
+    "pages/mine/mine",
     "pages/actionlist2/actionlist2",
     "pages/actionlist3/actionlist3",
     "pages/actionlist1/actionlist1",

@@ -31,16 +31,18 @@ Page({
           const status = res.data.status;
           if (status == 200) {
             app.globalData.userInfoBack = res.data.data;
+            wx.setStorageSync("sessionid", res.header["Set-Cookie"])
+            var time = 500
             wx.showToast({
               title: '登陆成功',
               icon: 'success',
-              duration: 2000,
-              success:function(){
-                wx.switchTab({
-                  url: '/pages/mine/mine',
-                });
-              }
+              duration: time,
             });
+            setTimeout(function() {
+              wx.switchTab({
+                url: '/pages/mine/mine',
+              });
+            }, time)
           } else {
             wx.showToast({
               title: res.data.msg,

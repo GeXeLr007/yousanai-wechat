@@ -27,5 +27,10 @@ Page({
   },
   bindGetUserInfo: function (e) {
     console.log(e.detail.userInfo)
+  },
+  changeToLogin:function(){
+    wx.navigateTo({
+      url: '../userLogin/login',
+    })
   }
 })

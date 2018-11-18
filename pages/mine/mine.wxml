@@ -5,11 +5,11 @@
       <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
     </view>
     <view class="user-info flex-item">
-    <open-data type="userNickName" class="userinfo-nickname"></open-data>
-      <text class="edit" catchtap="mimeinfo">绑定有三账号</text>  
+      <open-data type="userNickName" class="userinfo-nickname"></open-data>
+      <text class="edit" catchtap="changeToLogin">登录有三账号</text>
       <!--<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>-->
-<!--<view wx:else>请升级微信版本</view>-->
-  </view>
+      <!--<view wx:else>请升级微信版本</view>-->
+    </view>
   </view>
 
   <!--下部信息-->
