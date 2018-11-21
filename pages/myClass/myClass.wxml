@@ -1,0 +1,33 @@
+<view class="navbar1">
+  <!--页面分块加载-->
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+  <view class="clearzhang"></view>
+</view>
+
+<!--最近学习-->
+<view hidden="{{currentTab!==0}}" class='myblock'>
+  <view wx:for='{{courses}}' style='display: flex;flex-direction: row;margin-left: 15px;margin-bottom: 15px;'>
+    <image src='{{item.coursePicture}}' style='width:100px;height:100px'></image>
+    <view class='textView'>
+      <view class='textTotal'>{{item.courseName}}</view>
+      <view class='textTotal' style='color:red;font-size:12px'>已学{{item.studyPercent}}%</view>
+      <view class='textTotal' style='color:grey;font-size:12px'>学习至{{item.sectionName}}</view>
+      <view class='textTotal' style='color:green'><navigator url='../classVideo/classVideo?classId={{item.courseId}}'>继续学习</navigator></view>
+    </view>
+  </view>
+</view>
+
+<!--我的收藏-->
+<view hidden="{{currentTab!==1}}" class='myblock'>
+  <view wx:for='{{collections}}' style='display: flex;flex-direction: row;margin-left: 15px;margin-bottom: 15px;'>
+    <image src='{{item.coursePicture}}' style='width:100px;height:100px'></image>
+    <view class='textView'>
+      <view class='textTotal'>{{item.courseName}}</view>
+      <view class='textTotal textBrief' style=''>{{item.courseBrief}}</view>
+      <view class='textTotal' style='color:grey;font-size:12px' bindtap='cancelCollection' data-course-id='{{item.objectId}}'>取消收藏</view>
+    </view>
+  </view>
+  
+</view>

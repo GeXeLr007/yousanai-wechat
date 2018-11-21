@@ -15,6 +15,10 @@
   <view class="mdetail1">
     <view class="include">
       <view class='type-container'>
+        <view class='collect' bindtap='doCollection'>
+          <view><image src='{{collectSrc}}' style='width:20px;height:20px;margin-right:7px'></image></view>
+          <view style='color:grey'>收藏</view>
+        </view>
       </view>
       <view class="includeTextATsz" wx:for="{{learnClass}}">
 

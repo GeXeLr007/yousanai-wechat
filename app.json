@@ -1,8 +1,9 @@
 {
-  "pages":[
-    
+  "pages": [
     "pages/index/index",
     "pages/mine/mine",
+    "pages/myClass/myClass",
+    "pages/classVideo/classVideo",
     "pages/actionlist2/actionlist2",
     "pages/actionlist3/actionlist3",
     "pages/actionlist1/actionlist1",
@@ -17,14 +18,13 @@
     "pages/userRegist/regist",
     "pages/userLogin/login",
     "pages/actualClass/actual",
-    "pages/classVideo/classVideo",
     "pages/classInfo/classInfo"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FF3333",
     "navigationBarTitleText": "有三AI学院",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#888",
@@ -45,10 +45,10 @@
         "selectedIconPath": "image/shizhan1.png"
       },
       {
-       "pagePath": "pages/mine/mine",
+        "pagePath": "pages/mine/mine",
         "text": "我的",
-       "iconPath": "image/mime_nomal.png",
-       "selectedIconPath": "image/mime_pressed.png"
+        "iconPath": "image/mime_nomal.png",
+        "selectedIconPath": "image/mime_pressed.png"
       }
     ]
   },

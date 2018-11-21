@@ -30,9 +30,9 @@ Page({
           wx.hideLoading();
           const status = res.data.status;
           if (status == 200) {
-            app.globalData.userInfoBack = res.data.data;
+            wx.setStorageSync("loginUser", res.data.data)
             wx.setStorageSync("sessionid", res.header["Set-Cookie"])
-            var time = 500
+            var time = 1000
             wx.showToast({
               title: '登陆成功',
               icon: 'success',

@@ -32,14 +32,17 @@ Page({
           const status = res.data.status;
           wx.hideLoading();
           if (status == 200) {
+            var time = 1000;
             wx.showToast({
-                title: '小老弟恭喜你注册成功了~',
-                icon: 'none',
-                duration: 3000,
-                success:function(){
-                  wx.navigateBack({})
-                }
-              });
+              title: '小老弟恭喜你注册成功了~',
+              icon: 'none',
+              duration: time,
+            })
+            setTimeout(function(){
+              wx.navigateBack({
+                
+              })
+            },time)
           } else {
             wx.showToast({
               title: res.data.msg,
@@ -53,7 +56,7 @@ Page({
   },
   goLoginPage: function() {
     wx.navigateBack({
-      
+
     })
   }
 })

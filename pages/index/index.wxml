@@ -1,63 +1,58 @@
 <!--index.wxml-->
 <!--轮播区-->
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='imgSlide'>
-   
-     <navigator url="/pages/classVideo/classVideo?classId=1">
-      <swiper-item>
-        <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper1.png" class="slide-image" style='width:{{screenWidth}}px;'/>
-      </swiper-item>
-      </navigator>
-           <navigator url="/pages/about/about?classId=2">
-      <swiper-item>
-        <image src="https://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper2%281%29.png" class="slide-image" style='width:{{screenWidth}}px;'/>
-      </swiper-item>
-      </navigator>
-      <navigator url="/pages/action/action" open-type="switchTab">
-      <swiper-item>
-        <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper3.png" class="slide-image" style='width:{{screenWidth}}px;'/>
-      </swiper-item>
-      </navigator>
-    
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='imgSlide'>
+
+  <navigator url="/pages/classVideo/classVideo?classId=1">
+    <swiper-item>
+      <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper1.png" class="slide-image" style='width:{{screenWidth}}px;' />
+    </swiper-item>
+  </navigator>
+  <navigator url="/pages/about/about?classId=2">
+    <swiper-item>
+      <image src="https://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper2%281%29.png" class="slide-image" style='width:{{screenWidth}}px;' />
+    </swiper-item>
+  </navigator>
+  <navigator url="/pages/action/action" open-type="switchTab">
+    <swiper-item>
+      <image src="http://dulpyhb.oss-cn-beijing.aliyuncs.com/dulp/swipper/swipper3.png" class="slide-image" style='width:{{screenWidth}}px;' />
+    </swiper-item>
+  </navigator>
+
 </swiper>
 
-    
+
 <!--课程-->
 <view class='clear'></view>
 <view class="appointment">
- <view class="app-title" style='border-left:10rpx solid #9B30FF;'>图像处理</view>
- </view>
- <view class='clear-rd'></view>
- <view class="app-moduler">
- <block wx:for="{{recommond}}">
+  <view class="app-title" style='border-left:10rpx solid #9B30FF;'>图像处理</view>
+</view>
+<view class='clear-rd'></view>
+<view class="app-moduler">
+  <block wx:for="{{recommond}}">
     <navigator url="/pages/classVideo/classVideo?classId={{item.id}}" class="adv-mod-item-rd">
       <view class='adv-mod-img-title-rd'>
-      <view class="adv-mod-img-rd">
-        <image src="{{item.picture}}" class="adv-mod-image"></image>
-      </view>
-      <view class="adv-mod-title-type-rd">
-      <view class="adv-mod-title-rd">
-         <text class='adv-class-title-rd'>{{item.name}}</text>  
-      </view>
-      <view class="adv-mdemss">
-      <text class='adv-text-Ind'>类别: {{item.classifyName}}</text>
-      </view>
+        <view class="adv-mod-img-rd">
+          <image src="{{item.picture}}" class="adv-mod-image"></image>
+        </view>
+        <view class="adv-mod-title-type-rd">
+          <view class="adv-mod-title-rd">
+            <text class='adv-class-title-rd'>{{item.name}}</text>
+          </view>
+          <view class="adv-mdemss">
+            <text class='adv-text-Ind'>类别: {{item.classifyName}}</text>
+          </view>
 
-      <view class='adv-meas'>
+          <view class='adv-meas'>
             <view class="clear_line_title"></view>
-      <text class='adv-text-include'>{{item.brief}}</text>
-      <view class="clear_line_title">
+            <text class='adv-text-include'>{{item.brief}}</text>
+            <view class="clear_line_title">
+            </view>
+
+          </view>
+        </view>
       </view>
-      
-</view>
-      </view>
-      </view>
-      <button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
-		disabled="{{disabled}}" bindtap="warn" class='adv-button'>加入学习</button>
+      <button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="warn" class='adv-button'>加入学习</button>
       <view class='clear-rd'></view>
     </navigator>
-    </block>
-    </view>
-
-
-
+  </block>
+</view>

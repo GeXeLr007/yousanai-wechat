@@ -28,6 +28,9 @@ Page({
     var page = that.data.page;
     var serverUrl = app.serverUrl;
     var classId = options.classId;
+    that.setData({
+      classId: classId
+    })
     activeCategoryId: 0,
       wx.showLoading({
         title: 'Loading...',
@@ -96,6 +99,26 @@ Page({
       src: '',
       direction: ''
     })
+
+    wx.request({
+      url: serverUrl + '/collections/isCollection',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'cookie': wx.getStorageSync("sessionid") //读取cookie
+      },
+      data: {
+        courseId: classId
+      },
+      success: function(res) {
+        console.log(res.data)
+        app.goLoginPage(res)
+        var collectSrc = res.data.data == 1 ? "../../image/collectBlack.png" : "../../image/collect.png"
+        that.setData({
+          collectSrc: collectSrc
+        })
+      }
+    })
+
   },
   navbarTap: function(e) {
     console.log(e)
@@ -120,8 +143,9 @@ Page({
       },
       success: function(res) {
         console.log(res.data)
+        app.goLoginPage(res)
         that.setData({
-          rate:res.data.data,
+          rate: res.data.data,
           src: section.videoUrl,
           section: section
         })
@@ -133,7 +157,7 @@ Page({
     var cur = e.detail.currentTime;
     var section = that.data.section
     var last = wx.getStorageSync("currentTime")
-    if (cur - last > 3) {
+    if (Math.abs(cur - last) > 3) {
       wx.setStorageSync("currentTime", cur)
       console.log(e.detail.currentTime)
       wx.request({
@@ -149,11 +173,12 @@ Page({
         },
         success: function(res) {
           console.log(res.data)
+          app.goLoginPage(res)
         }
       })
     }
   },
-  onended: function () {
+  onended: function() {
     var section = this.data.section
     wx.request({
       url: serverUrl + '/course/endUserCourseSection',
@@ -165,8 +190,35 @@ Page({
         courseId: section.courseId,
         sectionId: section.id,
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data)
+        app.goLoginPage(res)
+      }
+    })
+  },
+
+  doCollection: function(e) {
+    var that = this
+    wx.request({
+      url: serverUrl + '/collections/doCollection',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'cookie': wx.getStorageSync("sessionid") //读取cookie
+      },
+      data: {
+        courseId: that.data.classId
+      },
+      success: function(res) {
+        console.log(res.data)
+        app.goLoginPage(res)
+        var title = res.data.data == 1 ? '收藏成功' : '取消收藏成功'
+        var collectSrc = res.data.data == 1 ? "../../image/collectBlack.png" : "../../image/collect.png"
+        that.setData({
+          collectSrc: collectSrc
+        })
+        wx.showToast({
+          title: title,
+        })
       }
     })
   }

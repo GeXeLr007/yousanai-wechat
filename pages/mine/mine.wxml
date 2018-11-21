@@ -6,7 +6,8 @@
     </view>
     <view class="user-info flex-item">
       <open-data type="userNickName" class="userinfo-nickname"></open-data>
-      <text class="edit" catchtap="changeToLogin">登录有三账号</text>
+      <text wx:if='{{!loginUser}}' class="edit" catchtap="changeToLogin">登录有三账号</text>
+      <text wx:if='{{loginUser}}' class="edit" catchtap="logout">注销有三账号</text>
       <!--<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>-->
       <!--<view wx:else>请升级微信版本</view>-->
     </view>
@@ -19,18 +20,18 @@
         <image src="../../image/video.png"></image>
       </view>
       <view class="myitem-name flex-item">
-        <text>我的课程</text>
+        <navigator url='../myClass/myClass'>我的课程</navigator>
       </view>
     </view>
 
-    <view class="my-item flex-wrp" catchtap="no_comment">
+    <!-- <view class="my-item flex-wrp" catchtap="no_comment">
       <view class="myitem-icon flex-item">
         <image src="../../image/icon_no_comment.png"></image>
       </view>
       <view class="myitem-name flex-item">
         <text>消息通知</text>
       </view>
-    </view>
+    </view> -->
 
   </view>
 </view>
