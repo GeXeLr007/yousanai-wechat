@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/myInfo/myInfo",
+    "pages/editMyInfo/editMyInfo",
     "pages/mine/mine",
     "pages/myClass/myClass",
     "pages/classVideo/classVideo",

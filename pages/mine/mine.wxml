@@ -24,14 +24,14 @@
       </view>
     </view>
 
-    <!-- <view class="my-item flex-wrp" catchtap="no_comment">
+    <view class="my-item flex-wrp" catchtap="no_comment">
       <view class="myitem-icon flex-item">
-        <image src="../../image/icon_no_comment.png"></image>
+        <image src="../../image/myInfo.png"></image>
       </view>
       <view class="myitem-name flex-item">
-        <text>消息通知</text>
+        <navigator url='../myInfo/myInfo'>个人信息</navigator>
       </view>
-    </view> -->
+    </view>
 
   </view>
 </view>

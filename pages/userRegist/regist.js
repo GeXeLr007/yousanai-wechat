@@ -25,7 +25,7 @@ Page({
         data: {
           username: username,
           password: password,
-          openId: app.globalData.openId
+          openId: wx.getStorageSync('openId')
         },
         success: function(res) {
           console.log(res.data);

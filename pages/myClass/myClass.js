@@ -15,43 +15,26 @@ Page({
    */
   onShow: function() {
     var that = this;
-    wx.request({
-      url: serverUrl + '/user/course',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'cookie': wx.getStorageSync("sessionid") //读取cookie
-      },
-      data: {},
-      success: function(res) {
-        console.log(res.data)
-        if (!app.goLoginPage(res)){
-          that.getCollection()
-          var courses = res.data.data
-          that.setData({
-            courses: courses
-          })
-        }
-      }
+    app.needLoginRequest('/user/course', {
+
+    }, function (res) {
+      that.getCollection()
+      var courses = res.data.data
+      that.setData({
+        courses: courses
+      })
     })
     
   },
   getCollection: function() {
     var that = this
-    wx.request({
-      url: serverUrl + '/user/collect',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'cookie': wx.getStorageSync("sessionid") //读取cookie
-      },
-      data: {},
-      success: function(res) {
-        console.log(res.data)
-        app.goLoginPage(res)
-        var collections = res.data.data
-        that.setData({
-          collections: collections
-        })
-      }
+    app.needLoginRequest('/user/collect', {
+
+    }, function (res) {
+      var collections = res.data.data
+      that.setData({
+        collections: collections
+      })
     })
   },
   navbarTap: function(e) {
@@ -67,24 +50,14 @@ Page({
       content: '确定不再收藏了吗？',
       success: function(res) {
         if (res.confirm) {
-          wx.request({
-            url: serverUrl + '/collections/doCollection',
-            header: {
-              'content-type': 'application/x-www-form-urlencoded',
-              'cookie': wx.getStorageSync("sessionid") //读取cookie
-            },
-            data: {
-              courseId: e.currentTarget.dataset.courseId
-            },
-            success: function(res) {
-              console.log(res.data)
-              app.goLoginPage(res)
-              that.getCollection()
-              var title = res.data.data == 1 ? '收藏成功' : '取消收藏成功'
-              wx.showToast({
-                title: title,
-              })
-            }
+          app.needLoginRequest('/collections/doCollection', {
+            courseId: e.currentTarget.dataset.courseId
+          }, function (res) {
+            that.getCollection()
+            var title = res.data.data == 1 ? '收藏成功' : '取消收藏成功'
+            wx.showToast({
+              title: title,
+            })
           })
         }
       }

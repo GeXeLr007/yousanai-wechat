@@ -41,25 +41,18 @@ Page({
       content: '确定注销吗？',
       success: function(res) {
         if (res.confirm) {
-          wx.request({
-            url: serverUrl + '/user/logout',
-            header: {
-              'content-type': 'application/x-www-form-urlencoded',
-              'cookie': wx.getStorageSync("sessionid") //读取cookie
-            },
-            data: {},
-            success: function(res) {
-              console.log(res.data)
-              app.goLoginPage(res)
-              wx.clearStorageSync('loginUser')
-              that.setData({
-                loginUser: wx.getStorageSync("loginUser")
-              })
-              wx.showToast({
-                title: '注销成功',
-              })
-            }
+          app.needLoginRequest('/user/logout', {
+
+          }, function (res) {
+            wx.clearStorageSync('loginUser')
+            that.setData({
+              loginUser: wx.getStorageSync("loginUser")
+            })
+            wx.showToast({
+              title: '注销成功',
+            })
           })
+          
         }
       }
     })

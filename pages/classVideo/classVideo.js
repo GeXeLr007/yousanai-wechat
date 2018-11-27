@@ -99,26 +99,14 @@ Page({
       src: '',
       direction: ''
     })
-
-    wx.request({
-      url: serverUrl + '/collections/isCollection',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'cookie': wx.getStorageSync("sessionid") //读取cookie
-      },
-      data: {
-        courseId: classId
-      },
-      success: function(res) {
-        console.log(res.data)
-        app.goLoginPage(res)
-        var collectSrc = res.data.data == 1 ? "../../image/collectBlack.png" : "../../image/collect.png"
-        that.setData({
-          collectSrc: collectSrc
-        })
-      }
+    app.needLoginRequest("/collections/isCollection", {
+      courseId: classId
+    }, function(res) {
+      var collectSrc = res.data.data == 1 ? "../../image/collectBlack.png" : "../../image/collect.png"
+      that.setData({
+        collectSrc: collectSrc
+      })
     })
-
   },
   navbarTap: function(e) {
     console.log(e)
@@ -131,26 +119,17 @@ Page({
     wx.setStorageSync("currentTime", 0)
     var that = this;
     var section = res.currentTarget.dataset.section
-    wx.request({
-      url: serverUrl + '/course/insertOrUpdateUserCourseSection',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'cookie': wx.getStorageSync("sessionid") //读取cookie
-      },
-      data: {
-        courseId: section.courseId,
-        sectionId: section.id
-      },
-      success: function(res) {
-        console.log(res.data)
-        app.goLoginPage(res)
-        that.setData({
-          rate: res.data.data,
-          src: section.videoUrl,
-          section: section
-        })
-      }
+    app.needLoginRequest("/course/insertOrUpdateUserCourseSection", {
+      courseId: section.courseId,
+      sectionId: section.id
+    }, function(res) {
+      that.setData({
+        rate: res.data.data,
+        src: section.videoUrl,
+        section: section
+      })
     })
+
   },
   ontimeupdate: function(e) {
     var that = this
@@ -160,66 +139,39 @@ Page({
     if (Math.abs(cur - last) > 3) {
       wx.setStorageSync("currentTime", cur)
       console.log(e.detail.currentTime)
-      wx.request({
-        url: serverUrl + '/course/insertOrUpdateUserCourseSection',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded',
-          'cookie': wx.getStorageSync("sessionid") //读取cookie
-        },
-        data: {
-          courseId: section.courseId,
-          sectionId: section.id,
-          currentTime: cur
-        },
-        success: function(res) {
-          console.log(res.data)
-          app.goLoginPage(res)
-        }
+      app.needLoginRequest('/course/insertOrUpdateUserCourseSection', {
+        courseId: section.courseId,
+        sectionId: section.id,
+        currentTime: cur
+      }, function (res) {
       })
     }
   },
   onended: function() {
     var section = this.data.section
-    wx.request({
-      url: serverUrl + '/course/endUserCourseSection',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'cookie': wx.getStorageSync("sessionid") //读取cookie
-      },
-      data: {
-        courseId: section.courseId,
-        sectionId: section.id,
-      },
-      success: function(res) {
-        console.log(res.data)
-        app.goLoginPage(res)
-      }
+    app.needLoginRequest('/course/endUserCourseSection', {
+      courseId: section.courseId,
+      sectionId: section.id,
+    }, function (res) {
+
     })
+    
   },
 
   doCollection: function(e) {
     var that = this
-    wx.request({
-      url: serverUrl + '/collections/doCollection',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'cookie': wx.getStorageSync("sessionid") //读取cookie
-      },
-      data: {
-        courseId: that.data.classId
-      },
-      success: function(res) {
-        console.log(res.data)
-        app.goLoginPage(res)
-        var title = res.data.data == 1 ? '收藏成功' : '取消收藏成功'
-        var collectSrc = res.data.data == 1 ? "../../image/collectBlack.png" : "../../image/collect.png"
-        that.setData({
-          collectSrc: collectSrc
-        })
-        wx.showToast({
-          title: title,
-        })
-      }
+    app.needLoginRequest('/collections/doCollection', {
+      courseId: that.data.classId
+    }, function (res) {
+      var title = res.data.data == 1 ? '收藏成功' : '取消收藏成功'
+      var collectSrc = res.data.data == 1 ? "../../image/collectBlack.png" : "../../image/collect.png"
+      that.setData({
+        collectSrc: collectSrc
+      })
+      wx.showToast({
+        title: title,
+      })
     })
+    
   }
 })
